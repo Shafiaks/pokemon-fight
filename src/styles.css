@@ -1,0 +1,43 @@
+.grid-wrapper{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    width: 100vw;
+    height: 100vh;
+ 
+}
+.name-list{
+    margin: 5% 4%;
+    border :1px solid black;
+    border-radius: 25%;
+    background-color: rgb(212, 217, 125);
+   
+}
+.router-wrapper h2 {
+  margin-top: 10%;
+  text-align: center;
+}
+.poke-Name{
+    margin:1% 5%;
+    font-size: larger;
+    color:rgb(25, 26, 26);
+    
+}
+.poke-img{
+  width: 10em;
+}
+  .read-more-link{
+    color: rgb(111, 109, 113);
+    text-decoration: underline;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .extra-content{
+    color: rgb(25, 26, 26);
+    font-weight: 500;
+  }
+  .card-component{
+    width:100%;
+    margin-left: 30%;
+    align-items: center;
+    justify-content: center;
+  }

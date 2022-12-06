@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import PokemonList from './components/PokemonList';
+import SinglePokemon from './components/SinglePokemon';
+import SuperDetailedView from './components/SuperDetailedView';
+//import DataJson from './DataJson.json';
+import axios from 'axios';
+
 
 function App() {
+  const [pokemons, setPokemons] = useState();
+
+  const fetchPokemons = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://perfect-red-armadillo.cyclic.app/pokemon"
+      );
+      console.log("all pokemon ", data);
+      setPokemons(data);
+    } catch (err) {
+      console.log(err);  
+    }
+  };
+
+  useEffect(() => {
+    fetchPokemons();
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='router-wrapper'>
+        {pokemons ? <Routes>
+          <Route path='/' element={<PokemonList DataJson={pokemons} />} ></Route>
+          <Route path='pokemon'>
+            <Route path=':id' element={<SinglePokemon DataJson={pokemons} />}></Route>
+            <Route path=':id/:info' element={<SuperDetailedView DataJson={pokemons} />} ></Route>
+          </Route>
+        </Routes>
+          : <h2> "Loading ..." </h2>
+        }
+      </div>
     </div>
   );
 }
