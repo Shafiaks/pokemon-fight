@@ -6,9 +6,8 @@ import SinglePokemon from './SinglePokemon';
 
 
 function PokemonList({DataJson}) {
-    console.log(DataJson)
-
-
+    //console.log(DataJson)
+    
     const [readMore, setReadMore] = useState(false);
 
     const linkName = readMore ? 'Show Less << ' : 'Show More >> ';

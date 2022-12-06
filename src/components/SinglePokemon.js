@@ -1,5 +1,5 @@
-import { React, useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { React, useState } from 'react';
+import {useParams } from 'react-router-dom';
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -27,13 +27,11 @@ function SinglePokemon({ DataJson }) {
         else if(selectedPokemon.id>=10 && selectedPokemon.id < 100) imgNum='0'+selectedPokemon.id;
         else imgNum=selectedPokemon.id;
         imgUrl='https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+imgNum+'.png'
-         console.log("img url is ",imgUrl);
+         //console.log("img url is ",imgUrl);
          return imgUrl;
      };
 
-      useEffect(()=>{
-       // imageURL();
-      },[])
+      
 
     return (
         <div className='card-component'>
@@ -42,7 +40,6 @@ function SinglePokemon({ DataJson }) {
                     <CardMedia
                         component="img"
                         width="300"
-                        //image={imgUrl}
                         image={imageURL()} 
                         alt="pokemon"
                     />
@@ -57,7 +54,7 @@ function SinglePokemon({ DataJson }) {
                         <Button size="small" onClick={() =>{setShowBase(prev => !prev)}}> Base :  {ShowBaseMore} </Button>
                           <ul>
                                 { showBase &&
-                                Object.keys(selectedPokemon.base).map(key => <li> {key + " : " + selectedPokemon.base[key]}</li>) 
+                                Object.keys(selectedPokemon.base).map(key => <li id={selectedPokemon.id}> {key + " : " + selectedPokemon.base[key]}</li>) 
                               }
                             </ul>
                     </CardActions>
@@ -65,7 +62,7 @@ function SinglePokemon({ DataJson }) {
                         <Button size="small" onClick={() =>{setShowType(prev => !prev)}}> TYPE :  {ShowTypeMore} </Button>
                           <ul>
                                {
-                               showType && Object.keys(selectedPokemon.type).map(key => <li>{selectedPokemon.type[key]}</li>)
+                               showType && Object.keys(selectedPokemon.type).map(key => <li id={selectedPokemon.id}>{selectedPokemon.type[key]}</li>)
                               }
                          </ul>
                     </CardActions>
