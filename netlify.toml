@@ -1,0 +1,10 @@
+[[redirects]]
+from = "/"
+to ="/index.html"
+status=200
+
+
+[[redirects]]
+  from = "/pokemon/:id"
+  to = "/pokemon/:id"
+  status = 200
