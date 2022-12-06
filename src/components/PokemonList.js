@@ -31,7 +31,7 @@ function PokemonList({DataJson}) {
                     <div>
                         <img className='poke-img' src={handleImgUrl(element.id)} alt={element.name.english} />
                         <div className='poke-Name' >{element.name.english}</div>
-                        <NavLink to={`/pokemon/${element.id}`} onClick={() => {setReadMore(prev => !prev)}}><span>{linkName}</span>
+                        <NavLink to={`/pokemon/${element.id}`} onClick={() => {setReadMore(prev => !prev)}}><span className='read-more-link'>{linkName}</span>
                         </NavLink>
                         {readMore && <SinglePokemon pokemon={element}/> }
                     </div>

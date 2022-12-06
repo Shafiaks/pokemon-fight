@@ -7,10 +7,6 @@
 }
 .name-list{
     margin: 5% 4%;
-    border :1px solid black;
-    border-radius: 25%;
-    background-color: rgb(212, 217, 125);
-   
 }
 .router-wrapper h2 {
   margin-top: 10%;
@@ -20,24 +16,28 @@
     margin:1% 5%;
     font-size: larger;
     color:rgb(25, 26, 26);
+    font-weight: 600;
     
 }
 .poke-img{
   width: 10em;
 }
   .read-more-link{
-    color: rgb(111, 109, 113);
-    text-decoration: underline;
+    font-weight:500 ;
+    color: rgb(35, 35, 36);
+    text-decoration: none;
     letter-spacing: 1px;
     cursor: pointer;
+    margin-bottom: 3%;
   }
-  .extra-content{
-    color: rgb(25, 26, 26);
-    font-weight: 500;
-  }
+
   .card-component{
     width:100%;
     margin-left: 30%;
     align-items: center;
     justify-content: center;
+    background: transparent;
+  }
+  .single-card{
+    background: transparent;
   }

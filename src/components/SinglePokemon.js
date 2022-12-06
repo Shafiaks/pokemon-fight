@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import {useParams } from 'react-router-dom';
+import '../styles.css'
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -7,6 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+
 
 
 function SinglePokemon({ DataJson }) {
@@ -30,13 +32,14 @@ function SinglePokemon({ DataJson }) {
          //console.log("img url is ",imgUrl);
          return imgUrl;
      };
-
-      
-
+     
+  
+     
+ 
     return (
         <div className='card-component'>
             {  selectedPokemon ?
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 345 }} className='single-card'>
                     <CardMedia
                         component="img"
                         width="300"
@@ -65,6 +68,9 @@ function SinglePokemon({ DataJson }) {
                                showType && Object.keys(selectedPokemon.type).map(key => <li id={selectedPokemon.id}>{selectedPokemon.type[key]}</li>)
                               }
                          </ul>
+                    </CardActions>
+                    <CardActions>
+                        <Button size="small" onClick={() =>{}}> SELECT </Button>
                     </CardActions>
                 </Card>
                 : "Loading ..."  
