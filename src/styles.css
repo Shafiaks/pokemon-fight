@@ -17,7 +17,7 @@
     font-size: larger;
     color:rgb(25, 26, 26);
     font-weight: 600;
-    
+    text-align: center;
 }
 .poke-img{
   width: 10em;
@@ -28,7 +28,6 @@
     text-decoration: none;
     letter-spacing: 1px;
     cursor: pointer;
-    margin-bottom: 3%;
   }
 
   .card-component{
@@ -40,4 +39,35 @@
   }
   .single-card{
     background: transparent;
+  }
+  .type-ul{
+    margin-left: 0%;
+    width: 100%;
+    display: inline-flex;
+    justify-content:space-evenly;
+    
+  }
+  .type-btn{
+    width:45%;
+    height: 2.5em;
+    color: rgb(47, 156, 181);
+    background-color: rgb(215, 227, 223);
+    border: none;
+  }
+  .base-ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  .base-li{
+    color: rgb(47, 156, 181);
+    list-style: none;
+    font-size: small;
+  }
+  .select-btn{
+    width: 60%;
+    height: 2.5em;
+    color: rgb(47, 156, 181);
+    background-color: rgb(215, 227, 223);
+    justify-self: center;
   }

@@ -16,7 +16,7 @@ function SinglePokemon({ DataJson }) {
     const [showBase, setShowBase] = useState(false);
     const [showType, setShowType] = useState(false);
 
-    const ShowBaseMore = showBase ? ' << ' : '>> ';
+    const ShowBaseMore = showBase ? ' <<< ' : '>>> ';
     const ShowTypeMore = showType ? ' << ' : '  >> ';
     let imgNum,imgUrl;
 
@@ -39,10 +39,10 @@ function SinglePokemon({ DataJson }) {
     return (
         <div className='card-component'>
             {  selectedPokemon ?
-                <Card sx={{ maxWidth: 345 }} className='single-card'>
+                <Card sx={{ maxWidth: 375 }} className='single-card'>
                     <CardMedia
                         component="img"
-                        width="300"
+                         width="100"
                         image={imageURL()} 
                         alt="pokemon"
                     />
@@ -51,26 +51,32 @@ function SinglePokemon({ DataJson }) {
                         <Typography gutterBottom variant="h5" component="div">
                             {selectedPokemon.name.english}
                         </Typography>
-
                     </CardContent>
+                        <CardActions>
+                          <ul className='type-ul'>
+                               {
+                                Object.keys(selectedPokemon.type).map(key => <button className='type-btn' id={selectedPokemon.id}>{selectedPokemon.type[key]}</button>)
+                              }
+                         </ul>
+                    </CardActions> 
                     <CardActions>
                         <Button size="small" onClick={() =>{setShowBase(prev => !prev)}}> Base :  {ShowBaseMore} </Button>
-                          <ul>
+                          <ul className='base-ul'>
                                 { showBase &&
-                                Object.keys(selectedPokemon.base).map(key => <li id={selectedPokemon.id}> {key + " : " + selectedPokemon.base[key]}</li>) 
+                                Object.keys(selectedPokemon.base).map(key => <li  id={selectedPokemon.id} className='base-li'> {key + " : " + selectedPokemon.base[key]}</li>) 
                               }
                             </ul>
                     </CardActions>
-                    <CardActions>
+                    {/* <CardActions>
                         <Button size="small" onClick={() =>{setShowType(prev => !prev)}}> TYPE :  {ShowTypeMore} </Button>
                           <ul>
                                {
                                showType && Object.keys(selectedPokemon.type).map(key => <li id={selectedPokemon.id}>{selectedPokemon.type[key]}</li>)
                               }
                          </ul>
-                    </CardActions>
+                    </CardActions> */}
                     <CardActions>
-                        <Button size="small" onClick={() =>{}}> SELECT </Button>
+                        <Button size="small" onClick={() =>{}} className="select-btn"> SELECT </Button>
                     </CardActions>
                 </Card>
                 : "Loading ..."  
