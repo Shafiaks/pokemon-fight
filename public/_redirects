@@ -1,2 +1,2 @@
-/ /index.html
-/pokemon/:id  /pokemon/:id
+/  /
+/pokemon/*  /pokemon/*
