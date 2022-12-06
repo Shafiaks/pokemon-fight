@@ -1,9 +1,5 @@
 [[redirects]]
 from = "/"
-to ="/index.html"
+to ="/pokemon/*"
 status=200
 
-[[redirects]]
-  from = "/pokemon/*"
-  to = "/pokemon/*"
-  status = 200
