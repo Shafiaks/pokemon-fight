@@ -6,8 +6,7 @@ import { height } from '@mui/system';
 export default function LinearProgressBar({SelectedBase,RandomBase})  {
     const [progress, setProgress] = React.useState(100);
     const [buffer, setBuffer] = React.useState(10);
-    console.log(SelectedBase,RandomBase);
-
+   
     const progressRef = React.useRef(() => {});
     React.useEffect(() => {
       progressRef.current = () => {
@@ -16,7 +15,7 @@ export default function LinearProgressBar({SelectedBase,RandomBase})  {
           const randomPokStrength =  (RandomBase.Attack*RandomBase.Speed)+(RandomBase.Defense*RandomBase.HP);
           const difference =(selectedPokStrength-randomPokStrength);
       
-          console.log("diff ",difference)
+          //console.log("diff ",difference)
            setProgress(progress - (selectedPokStrength/1000) -(randomPokStrength/1000));
            setBuffer(progress - (difference/1000)+200);
        
@@ -24,13 +23,15 @@ export default function LinearProgressBar({SelectedBase,RandomBase})  {
     });
 
     React.useEffect(() => {
-        const timer = setInterval(() => {
-          progressRef.current();
-        }, 500);
+      progressRef.current();
 
-        return () => {
-            clearInterval(timer);
-          };
+        // const timer = setInterval(() => {
+        //   progressRef.current();
+        // }, 500);
+
+        // return () => {
+        //     clearInterval(timer);
+        //   };
         }, []);
 
   return (

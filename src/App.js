@@ -8,7 +8,7 @@ import SuperDetailedView from './components/SuperDetailedView';
 //import DataJson from './DataJson.json';
 import axios from 'axios';
 import SelectedPlayers from './components/SelectedPlayers';
-import ShowResult from './components/ShowResult';
+
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
             <Route path=':id' element={<SinglePokemon DataJson={pokemons} />}></Route>
             <Route path=':id/:info' element={<SuperDetailedView DataJson={pokemons} />} ></Route>
             <Route path=':id/start-game' element={<SelectedPlayers DataJson={pokemons} />} ></Route>
-            <Route path=':id/game-result' element={<ShowResult DataJson={pokemons} />} ></Route>
+         
           </Route>
         </Routes>
           : <h2> "Loading ..." </h2>

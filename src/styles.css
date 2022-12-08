@@ -86,3 +86,13 @@
   .progressBarContainer{
     transform: rotate(180deg);
   }
+  .result-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;
+  }
+  .result-text{
+    margin-top: 4%;;
+  }
